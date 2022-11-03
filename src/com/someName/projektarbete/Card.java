@@ -14,8 +14,15 @@ public class Card {
         this.cardSymbol = cardSymbol;
     }
 
-    public String getCardValue() {
-        return cardValue;
+    public int getCardValue() {
+
+        return switch (cardValue) {
+            case "Ace" -> 11;                   // TODO - Fix 1 or 11
+            case "Jack", "Queen", "King" -> 10;
+
+            default -> Integer.parseInt(cardValue);
+        };
+
     }
 
     public void setCardValue(String cardValue) {
@@ -25,8 +32,8 @@ public class Card {
     @Override
     public String toString() {
         return "{" +
-                " cardSymbol = '" + cardValue + '\'' +
-                ", cardValue = '" + cardSymbol + '\'' +
+                " cardValue = '" + cardValue + '\'' +
+                ", cardSymbol = '" + cardSymbol + '\'' +
                 '}' + "\n";
     }
 }

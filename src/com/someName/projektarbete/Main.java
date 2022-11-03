@@ -1,26 +1,19 @@
 package com.someName.projektarbete;
 
+import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
 
         Deck deckTemplate = new Deck();
-        Random random = new Random();
+        Player player = new Player();
 
-        List<Card> deckOfCards = deckTemplate.generateDeck();
+        List<Card> deckOfCards = deckTemplate.generateDeck();   // Sorted by default
+        Menu menu = new Menu(player, deckOfCards);
 
-        System.out.println(deckOfCards);
+        menu.mainMenu(); // Starts Blackjack
 
-        System.out.println(deckOfCards.get(0));
-        System.out.println();
-        System.out.println(deckOfCards.remove(0));
-
-        // TODO - Being able to draw a card
-        // #1 - deckOfCards - 1 Card LESS
-        // #2 - Calculate Card Value
-        // #3 - Do While - Scanner + Switch cases
 
     }
 }
