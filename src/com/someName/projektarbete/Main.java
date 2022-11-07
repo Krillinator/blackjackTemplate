@@ -7,10 +7,12 @@ public class Main {
     public static void main(String[] args) {
 
         Deck deckTemplate = new Deck();
-        Player player = new Player();
+        Participant player1 = new Participant();
+        Dealer dealer = new Dealer();
 
         List<Card> deckOfCards = deckTemplate.generateDeck();   // Sorted by default
-        Menu menu = new Menu(player, deckOfCards);
+
+        Menu menu = new Menu(player1, dealer, deckOfCards);
 
         menu.mainMenu(); // Starts Blackjack
 

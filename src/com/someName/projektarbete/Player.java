@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Player {
 
-    List<Card> pHand = new ArrayList<>();
+    List<Card> hand = new ArrayList<>();
 
     public void draw(List<Card> deckOfCards) {
-        pHand.add(deckOfCards.get(0));
+        hand.add(deckOfCards.get(0));
         // pHand.add(deckOfCards.get(deckOfCards.size() -1));
         deckOfCards.remove(0);
     }
